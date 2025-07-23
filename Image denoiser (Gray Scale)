@@ -1,0 +1,14 @@
+#importing necessities 
+import numpy as np #for math
+import matplotlib.pyplot as plt #for displaying input and output 
+from PIL import Image #to import images
+from sklearn.decomposition import PCA 
+
+filename = input("Enter file name: ") 
+try:
+    file = open(filename, "r")
+except FileNotFoundError:
+    print("File cannot be opened:" , filename)
+    quit()
+img = Image.open(filename).convert('L') #this will open the image and convert it to grayscale
+img_array = np.asarray(img) 
